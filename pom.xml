@@ -22,4 +22,55 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+
+    <resources>
+      <resource>
+        <directory>code/resources</directory>
+      </resource>
+    </resources>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.9.1</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>code/applying</source>
+                <source>code/bring</source>
+                <source>code/collections</source>
+                <source>code/compare</source>
+                <source>code/desigining</source>
+                <source>code/introduction</source>
+                <source>code/lazy</source>
+                <source>code/recur</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
 </project>
